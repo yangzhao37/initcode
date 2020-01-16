@@ -23,8 +23,8 @@
             <form class="login_form">
                 <i class="iconfont icon-user"></i>
                 <i class="iconfont icon-key"></i>
-                <input type="text" class="input_txt" placeholder="用户名">
-                <input type="password" class="input_pass" placeholder="密码">
+                <input type="text" id="username" class="input_txt" placeholder="用户名">
+                <input type="password" id="password" class="input_pass" placeholder="密码">
                 <!-- 如果是submit的按钮在表单中，它会有一个提交的动作 -->
                 <!-- 把submit该成button，则它就不会提交表单了 -->
                 <input id="btnLogin" type="button" class="input_sub" value="登 录">
@@ -33,15 +33,20 @@
     </div>
     <script src="./js/jquery-1.12.4.min.js"></script>
 
+    <!-- 引入config.js模块 -->
+    <script src="./js/util/config.js"></script>
+    <!-- 引入user.js模块 -->
+    <script src="./js/util/user.js"></script>
+
     <script>
         //1.用户登录
         //思路：
         //给按钮添加点击事件：
         //(1)收集用户信息，简单判断。
         //(2)请求ajax接口，根据接口的反馈做后续的动作
-        $('#btnlogin').click(function() {
-            var name = $('username').val().trim()
-            var password = $('password').val().trim()
+        $('#btnLogin').click(function() {
+            var name = $('#username').val().trim()
+            var password = $('#password').val().trim()
                 //判断，信息不能为空
             if (name.length === 0 || password.length === 0) {
                 alert('不能为空')

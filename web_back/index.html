@@ -43,7 +43,7 @@
         </form>
         <div class="user_center_link">
             <a href="user.html" onclick="setMenu(3,0)" target="main_frame">个人中心</a>
-            <img src="images/2.jpg" alt="person">
+            <img class="userImg" src="images/2.jpg" alt="person">
             <!-- href="javascript:;" 不要让A标签跳转 -->
             <a href="javascript:;" id="btnLogout"><i class="iconfont icon-tuichu"></i> 退出</a>
         </div>
@@ -106,7 +106,10 @@
             }
         }
     </script>
-
+    <!-- 引入config.js模块 -->
+    <script src="./js/util/config.js"></script>
+    <!-- 引入user.js模块 -->
+    <script src="./js/util/user.js"></script>
     <script>
         //1.用户退出
         //思路：

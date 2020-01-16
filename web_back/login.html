@@ -27,7 +27,7 @@
                 <input type="password" class="input_pass" placeholder="密码">
                 <!-- 如果是submit的按钮在表单中，它会有一个提交的动作 -->
                 <!-- 把submit该成button，则它就不会提交表单了 -->
-                <input type="btnLogin" type="button" class="input_sub" value="登 录">
+                <input id="btnLogin" type="button" class="input_sub" value="登 录">
             </form>
         </div>
     </div>
@@ -39,6 +39,30 @@
         //给按钮添加点击事件：
         //(1)收集用户信息，简单判断。
         //(2)请求ajax接口，根据接口的反馈做后续的动作
+        $('#btnlogin').click(function() {
+            var name = $('username').val().trim()
+            var password = $('password').val().trim()
+                //判断，信息不能为空
+            if (name.length === 0 || password.length === 0) {
+                alert('不能为空')
+                return
+            }
+
+            //用户登录
+            user.login(name, password).then(function(res) {
+                console.log(res);
+                //2.反馈做后续的动作
+                if (res.code === 200) {
+                    // alert('登录成功')
+                    //跳到主页
+                    window.location.href = "./index.html"
+                } else {
+                    //失败，直接打出错别信息
+                    alert(res.msg)
+                }
+
+            })
+        })
     </script>
 </body>
 

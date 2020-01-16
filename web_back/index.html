@@ -123,6 +123,16 @@
                 }
             })
         })
+
+        //2.获取管理员信息并显示
+        user.getInfo().then(function(res) {
+            console.log(res);
+            if (res.code === 200) {
+                //显示内容
+                $('#userName').text(res.data.nickname)
+                $('.userImg').attr('src', res.data.user_pic)
+            }
+        })
     </script>
 
 </body>

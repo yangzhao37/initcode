@@ -25,11 +25,21 @@
                 <i class="iconfont icon-key"></i>
                 <input type="text" class="input_txt" placeholder="用户名">
                 <input type="password" class="input_pass" placeholder="密码">
-                <input type="submit" class="input_sub" value="登 录">
+                <!-- 如果是submit的按钮在表单中，它会有一个提交的动作 -->
+                <!-- 把submit该成button，则它就不会提交表单了 -->
+                <input type="btnLogin" type="button" class="input_sub" value="登 录">
             </form>
         </div>
     </div>
     <script src="./js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        //1.用户登录
+        //思路：
+        //给按钮添加点击事件：
+        //(1)收集用户信息，简单判断。
+        //(2)请求ajax接口，根据接口的反馈做后续的动作
+    </script>
 </body>
 
 </html>
